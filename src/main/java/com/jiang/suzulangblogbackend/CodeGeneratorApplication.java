@@ -6,10 +6,12 @@ import com.baomidou.mybatisplus.generator.fill.Column;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-//@SpringBootApplication
+@SpringBootApplication
 public class CodeGeneratorApplication implements CommandLineRunner {
 
     @Value("${spring.datasource.url}")
