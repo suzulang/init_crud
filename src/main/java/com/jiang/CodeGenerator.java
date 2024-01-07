@@ -1,4 +1,4 @@
-package com.jiang.suzulangblogbackend;
+package com.jiang;
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.generator.FastAutoGenerator;
 import com.baomidou.mybatisplus.generator.config.DataSourceConfig;
@@ -12,7 +12,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 @SpringBootApplication
-public class CodeGeneratorApplication implements CommandLineRunner {
+public class CodeGenerator implements CommandLineRunner {
 
     @Value("${spring.datasource.url}")
     private String url;
@@ -24,7 +24,7 @@ public class CodeGeneratorApplication implements CommandLineRunner {
     private String password;
 
     public static void main(String[] args) {
-        SpringApplication.run(CodeGeneratorApplication.class, args);
+        SpringApplication.run(CodeGenerator.class, args);
     }
 
     public void run(String... args) throws Exception {
@@ -33,7 +33,6 @@ public class CodeGeneratorApplication implements CommandLineRunner {
                 .globalConfig((scanner, builder) -> {
                     String projectPath = System.getProperty("user.dir");
                     builder.author(scanner.apply("请输入作者名称？"))
-                            .fileOverride()
                             .outputDir(projectPath + "/src/main/java"); // 设置输出目录
                 })
                 .packageConfig((scanner, builder) -> builder.parent(scanner.apply("请输入包名？")))
